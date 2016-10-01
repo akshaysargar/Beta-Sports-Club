@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+
+     body
+      {
+        position: relative;
+        margin: 0px auto;
+        padding-top: 100px;
+        font-family: 'Droid Serif', Georgia, Times, serif;
+        background: #649173; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #649173 , #DBD5A4); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #649173 , #DBD5A4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */          
+      }
+/*---------------------------------------------------------Logo CSS----------------------------------------------*/      
+      #logo
+      { 
+        width: 150px;
+        height: 85px;
+      }
+/*-----------------------------------------------------Navbar CSS-----------------------------------------------------*/
+      #navbar .nav-pills .nav-item.open .nav-link,
+      #navbar .nav-pills .nav-item.open .nav-link:focus,
+      #navbar .nav-pills .nav-item.open .nav-link:hover,
+      #navbar .nav-pills .nav-link.active,
+      #navbar .nav-pills .nav-link.active:focus,
+      #navbar .nav-pills .nav-link.active:hover 
+      {
+        background-color: #37B60D;
+        border-color: transparent;
+        border-radius: 5px;
+      }     
+      .navbar.center .navbar-inner 
+      {
+        text-align: center;
+      }
+      .navbar-default 
+      {
+        background-color: white;
+        border-radius:0px;
+      }
+
+      .navbar-default .navbar-nav > li > a 
+      {
+        color: black;
+        font-size: 15px;
+        font-family: 'Droid Serif', Georgia, Times, serif;
+        letter-spacing: 1px;
+        margin: 18px 10px 18px 10px;
+        border: 2px solid transparent;
+        padding: 8px;
+      }
+      .navbar-default .navbar-nav > li > a:hover,
+      .navbar-default .navbar-nav > li > a:focus
+      {    
+        border:2px solid #D40472;
+        padding: 8px;
+      }
+
+       
+/*-----------------------------------------------Image Flip container -------------------------------------------------*/
+
+      #stadiums
+      {
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+/*-------------------------------------------------Image Flip CSS-------------------------------------------------*/ 
+      
+      .flip-container 
+      {
+        -webkit-perspective: 1000;
+        -moz-perspective: 1000;
+        -ms-perspective: 1000;
+        perspective: 1000;
+
+        -ms-transform: perspective(1000px);
+        -moz-transform: perspective(1000px);
+        -moz-transform-style: preserve-3d; 
+        -ms-transform-style: preserve-3d; 
+        
+        margin: 10px;
+      }
+    
+      /* START: Accommodating for IE */
+      .flip-container:hover .back, .flip-container.hover .back 
+      {
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+      }
+
+      .flip-container:hover .front, .flip-container.hover .front 
+      {
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+      }
+    
+      /* END: Accommodating for IE */
+
+      .flip-container, .front, .back 
+      {
+        width:350px;
+        height: 350px;
+        border-radius:10px;
+        padding: 0px;
+      }
+
+      .flipper 
+      {
+        -webkit-transition: 0.6s;
+        -webkit-transform-style: preserve-3d;
+        -ms-transition: 0.6s;
+
+        -moz-transition: 0.6s;
+        -moz-transform: perspective(1000px);
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+
+        transition: 0.6s;
+        transform-style: preserve-3d;
+
+        position: relative;
+      }
+
+      .front, .back 
+      {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        -webkit-transition: 0.6s;
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: rotateY(0deg);
+
+        -moz-transition: 0.6s;
+        -moz-transform-style: preserve-3d;
+        -moz-transform: rotateY(0deg);
+
+        -o-transition: 0.6s;
+        -o-transform-style: preserve-3d;
+        -o-transform: rotateY(0deg);
+
+        -ms-transition: 0.6s;
+        -ms-transform-style: preserve-3d;
+        -ms-transform: rotateY(0deg);
+
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        transform: rotateY(0deg);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+      }
+
+      .front 
+      {
+        -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        background: lightgreen;
+        z-index: 2;
+        font-size: 30px;
+        text-align: center;
+        -webkit-box-shadow: 8px -8px 25px -4px rgba(212,4,114,1);
+        -moz-box-shadow: 8px -8px 25px -4px rgba(212,4,114,1);
+        box-shadow: 8px -8px 25px -4px rgba(212,4,114,1);
+      }
+
+
+      .back 
+      {
+        -webkit-transform: rotateY(-180deg);
+        -moz-transform: rotateY(-180deg);
+        -o-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+
+      }
+      /*------------------------------------------Image Flip typography-----------------------*/
+      span
+      {
+        color: #D40472;  
+        text-align: center;
+        letter-spacing: 1px;
+      }
+      h5
+      {
+        text-align: center;
+      }
+      
+     
+/*----------------------------------------------------Footer CSS-----------------------------------------------------------*/      
+      #footer
+      {
+        background-color: #DCDCDC;
+        height: 143px;
+        padding-top: 10px;
+      }
+      .footerfont
+      {
+        color: #D40472;
+      }
+      i
+      {
+        font-size: 20px;
+        border:2px solid #D40472;
+        border-radius: 20px;
+        padding: 10px;
+        margin-top: 30px;
+        color: #D40472;
+      }
+      i:hover
+      {
+        border:2px solid #37B60D;
+        border-radius: 20px;
+        background-color: #37B60D;
+      }
+/*------------------------------------------Small Mobile Screen---------------------------------------------------------------*/
+      @media (max-width:400px)
+      {
+        .flip-container, .front, .back 
+        {
+          width: 220px;
+          height: 270px;
+          border-radius:10px;
+          margin: 10px auto;   
+        }
+      }
+      @media (max-width:991px)
+      {
+        .navbar-nav .nav-item 
+        {
+          float: none !important;  
+        }
+        #home-item
+        {
+          padding-top:60px;
+        }
+        
+        #footer
+        {
+          height: 350px;
+          font-size: 14px;  
+        }
+        #logo1
+        {
+          margin-bottom: 32px;
+        }
+        #logo
+        {
+          width: 120px;
+          height: 70px;    
+        }
+         
+        .flip-container, .front, .back 
+        {
+          margin: 10px auto;
+          border-radius:10px;
+          font-size: 13px;
+        }
+            
+      }
+      
+       </style>
+
+  </head>
+  
+  <body>
+
+
+  <nav class="navbar navbar-default center navbar-fixed-top" id="navbar">
+  
+    <div class="navbar-header">
+          
+      <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">&#9776;</button>
+      <a class="navbar-brand " href="home.html"><img src="images/logo.jpg"  class="img-fluid" id="logo"></a>
+  
+    </div>
+ 
+    <div class="collapse  navbar-toggleable-md" id="exCollapsingNavbar2">
+
+      <div class="navbar-inner ">
+
+        <ul class="nav navbar-nav nav-pills ">
+
+          <li class=" nav-item" id="home-item">
+            <a class=" nav-link " href="index.html">HOME</a>
+          </li>
+
+          <li class=" nav-item">
+            <a class=" nav-link " href="events.html">EVENTS</a>
+          </li>
+
+          <li class=" nav-item">
+            <a class=" nav-link " href="ground.html">GROUND</a>
+          </li>
+
+          <li class=" nav-item">
+            <a class=" nav-link active " href="contact.html">SPORTS<br>ASSOCIATED</a>
+          </li>
+
+          <li class=" nav-item">
+            <a class=" nav-link " href="/blog/">BlOG</a>
+          </li>
+
+          <li class=" nav-item">
+            <a class=" nav-link " href="coaches.html">OUR TEAM</a>
+          </li>
+
+          <li class=" nav-item">
+            <a class=" nav-link" href="contact.html">CONTACT</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <div class="container" id="stadiums">
+
+    <div class="row">
+
+      <div class="flip-container col-md-4 " ontouchstart="this.classList.toggle('hover');">
+        
+        <div class="flipper">
+          
+          <div class="front" style="background: url(images/football.jpg) 0 0 no-repeat;-webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
+                                    background-size: cover;" >
+        
+            <span class="name">Football</span>
+        
+          </div>
+      
+          <div class="back" style="background:#DCDCDC; text-align:center;">
+        
+            <div class="back-title"><h5>Football</h5></div>
+                      
+              <p class="bold">A form of sport played between two teams of 11 players, in which the ball may be advanced by kicking or by bouncing it off any part of the body but the arms and hands, except in the case of the goalkeepers, who may use their hands to catch, carry, throw, or stop the ball.</p>
+              <p class="bold">Famous Players:Sunil Chetri(IND) , Lionel Messi(ARG) ,Cristiano Ronaldo(POR)</p> 
+          
+          </div>
+    
+        </div>
+      
+      </div>
+
+      <div class="flip-container col-md-4" ontouchstart="this.classList.toggle('hover');">
+        
+        <div class="flipper">
+          
+          <div class="front" style="background: url(images/basketball.jpg) 0 0 no-repeat;-webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
+                                    background-size: cover;">
+            
+            <span class="name">Basketball</span>
+          
+          </div>
+      
+          <div class="back" style="background:#DCDCDC; text-align:center;">
+        
+            <div class="back-title"><h5>Basketball</h5></div>
+        
+              <p class="bold">A game played by two teams of usually five players each on a rectangular court having a raised basket or goal at each end, points being scored by tossing the ball through the opponent's basket.</p>
+              <p class="bold">Famous Players : Lebron James(USA) , Stephen Curry(USA) , Pau Gasol(ESP) </p>
+
+          </div>
+    
+        </div>
+  
+      </div>
+
+      <div class="flip-container col-md-4 " ontouchstart="this.classList.toggle('hover');">
+        
+        <div class="flipper">
+          
+          <div class="front" style="background: url(images/athletics.jpg) 0 0 no-repeat;-webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
+                                    background-size: cover;" >
+            <span class="name">Athletics</span>
+      
+          </div>
+      
+          <div class="back" style="background:#DCDCDC; text-align:center;">
+        
+            <div class="back-title"><h5>Athletics</h5></div>
+              
+              <p class="bold">Athletics is a collection of sporting events that involve competitive running, jumping, throwing, and walking. The most common types of athletics competitions are track and field, road running, cross country running, and race walking.</p>
+              <p class="bold">Famous Athletes : Usain Bolt(JAM) , Mo Farah(GBR)</p>
+            
+          </div>
+        
+        </div>
+      
+      </div>
+
+
+      <div class="flip-container col-md-4" ontouchstart="this.classList.toggle('hover');">
+        
+        <div class="flipper">
+          
+          <div class="front" style="background: url(images/tennis.jpg) 0 0 no-repeat;-webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
+                                    background-size: cover;">
+            
+            <span class="name">Tennis</span>
+          
+          </div>
+      
+          <div class="back" style="background:#DCDCDC; text-align:center;">
+        
+            <div class="back-title"><h5>Tennis</h5></div>
+              
+              <p class="bold">A game played on a rectangular court by two players or two pairs of players equipped with rackets, in which a ball is driven back and forth over a low net that divides the court in half.</p>
+              <p class="bold">Famous Players: Sania Mirza(IND) , Roger Federer(SUI) , Rafael Nadal(ESP) , Novak Djokovic(SER) </p>
+          
+          </div>
+        
+        </div>
+      
+      </div>
+
+
+      <div class="flip-container col-md-4" ontouchstart="this.classList.toggle('hover');">
+    
+        <div class="flipper">
+          
+          <div class="front" style="background: url(images/yoga1.jpg) 0 0 no-repeat;-webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
+                                    background-size: cover;">
+            
+            <span class="name">Yoga</span>
+      
+          </div>
+      
+          <div class="back" style="background:#DCDCDC; text-align:center;">
+        
+            <div class="back-title"><h5>Yoga</h5></div>
+              
+              <p class="bold">Yoga is a group of physical, mental, and spiritual practices or disciplines which originated in ancient India.</p>
+              <p class="bold">Great Yogis : Maharishi Patanjali , Adi Shankaracharya , Swami Vivekananda</p>
+            
+          </div>
+    
+        </div>
+      
+      </div>
+
+      <div class="flip-container col-md-4" ontouchstart="this.classList.toggle('hover');">
+        
+        <div class="flipper">
+            
+            <div class="front" style="background: url(images/swimming.jpg) 0 0 no-repeat;-webkit-background-size: cover;
+                                      -moz-background-size: cover;
+                                      -o-background-size: cover;
+                                      background-size: cover;
+                                      padding-right:20px;">
+              
+              <span class="name">Swimming</span>
+            
+            </div>
+            
+            <div class="back" style="background:#DCDCDC; text-align:center;">
+        
+              <div class="back-title"><h5>Swimming</h5></div>
+       
+                <p class="bold">Swimming is an individual or team sport and activity. Competitive swimming is one of the most popular Olympic sports, with events in butterfly, backstroke, breaststroke, freestyle, and individual medley. In addition to these individual events, Olympic swimmers also participate in relays.</p>
+                <p class="bold">Famous Swimmers : Michael Phelps(USA) , Ian thorpe(AUS)</p>
+
+            </div>
+            
+        </div>
+          
+      </div>
+
+      <div class="flip-container col-md-4" ontouchstart="this.classList.toggle('hover');">
+        
+        <div class="flipper">
+          
+          <div class="front" style="background: url(images/badminton.jpg) 0 0 no-repeat;-webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
+                                    background-size: cover;">
+            
+            <span class="name">Badminton</span>
+          
+          </div>
+      
+          <div class="back" style="background:#DCDCDC; text-align:center;">
+        
+            <div class="back-title"><h5>Badminton</h5></div>
+            
+              <p class="bold">A game played on a rectangular court by two players or two pairs of players equipped with light rackets used to volley a shuttlecock over a high net that divides the court in half.</p>
+              <p class="bold">Famous Player : Saina Nehwal(IND) , Carolina Marin(ESP)</p>
+          
+          </div>
+    
+        </div>
+      
+      </div>
+
+    </div>  
+
+  </div>
+
+
+  <div class="container-fluid"  id="footer">
+
+    <div class="row">
+
+        <div class="col-md-5">
+          
+          <p class="font-weight-bold"><span class="footerfont">Office Address:</span>
+          <br>10,Chitra Apartments,966/A
+          <br>Gokhale Nagar Road
+          <br>Near Vetal Maharaj Chowk,Shivajinagar
+          <br>Pune-411016</p>
+        
+        </div>
+
+  
+
+        <div id="logo1" class="col-md-5">  
+          
+          <a href="https://www.facebook.com/betasportsclub/"> <i class="fa fa-facebook " aria-hidden="true" id="facebook"></i></a>
+
+          <a href="https://twitter.com/BetaFC_Pune"><i class="fa fa-twitter " aria-hidden="true" id="twitter"></i>  </a>
+
+          <a href="https://www.instagram.com/beta_sportsclub/"><i class="fa fa-instagram" aria-hidden="true"></i> </a>
+
+          <a href="https://plus.google.com/u/0/101752366025782950515/posts"> <i class="fa fa-google-plus" aria-hidden="true" id="google-plus"></i> </a>
+        
+        </div>
+
+        <div class="col-md-2">
+          
+            <p class="font-weight-bold"><span class="footerfont">Contact No:</span>
+            <br>8793089994
+            <br>9158823893</p>
+
+        </div>
+
+    </div>
+
+  </div>
+
+
+<!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript">
+      
+</script>
+  
+
+
+  </body>
+
+</html>

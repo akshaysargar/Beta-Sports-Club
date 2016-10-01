@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+
+    <style type="text/css">
+
+     body
+      {                
+        
+        position: relative;
+        margin: 0px auto;
+        padding-top: 100px;
+        font-family: 'Droid Serif', Georgia, Times, serif;
+        background: #EFEFBB; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #EFEFBB , #D4D3DD); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #EFEFBB , #D4D3DD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                          
+      }
+      #logo
+      { 
+        width: 150px;
+        height: 85px;
+      }
+/*-----------------------------------------------Navbar CSS-----------------------------------------------------*/
+
+      #navbar .nav-pills .nav-item.open .nav-link,
+      #navbar .nav-pills .nav-item.open .nav-link:focus,
+      #navbar .nav-pills .nav-item.open .nav-link:hover,
+      #navbar .nav-pills .nav-link.active,
+      #navbar .nav-pills .nav-link.active:focus,
+      #navbar .nav-pills .nav-link.active:hover 
+      {
+        background-color: #37B60D;
+        border-color: transparent;
+        border-radius: 5px;
+      }     
+      .navbar.center .navbar-inner 
+      {
+        text-align: center;
+      }
+      .navbar-default 
+      {
+        background-color: white;
+        border-radius:0px;
+      }
+
+      .navbar-default .navbar-nav > li > a 
+      {
+        color: black;
+        font-size: 15px;
+        font-family: 'Droid Serif', Georgia, Times, serif;
+        letter-spacing: 1px;
+        margin: 18px 10px 18px 10px;
+        border: 2px solid transparent;
+        padding: 8px;
+      }
+      .navbar-default .navbar-nav > li > a:hover,
+      .navbar-default .navbar-nav > li > a:focus
+      {    
+        border:2px solid #D40472;
+        padding: 8px;
+      }
+/*--------------------------------------------------Main Container---------------------------------------------------*/     
+      #aboutus
+      {
+        margin-top: 50px;
+      }
+
+/*---------------------------------------------------Footer Container----------------------------------------------------*/
+      #footer
+      {
+        background-color: #DCDCDC;
+        height: 143px;
+        padding-top: 10px;
+      }
+      .footerfont
+      {
+        color: #D40472;
+      }
+
+      i
+      {
+        font-size: 20px;
+        border:2px solid #D40472;
+        border-radius: 20px;
+        padding: 10px;
+        margin-top: 30px;
+        color: #D40472;
+      }
+      i:hover
+      {
+        border:2px solid #37B60D;
+        border-radius: 20px;
+        background-color: #37B60D;
+      }
+      
+      .info
+      {
+        font-size: 19px;
+      }
+/*-----------------------------------------------Coach Information container------------------------------------------*/      
+      #wrapper
+      {
+        margin-left: 30px;
+        font-size: 17px;
+        letter-spacing: 1px;
+      }
+/*------------------------------------------------Coach Card (Photo,Name)-----------------------------------------------*/      
+      .card
+      {
+        -webkit-box-shadow: 1px 2px 57px -4px rgba(0,57,115,1);
+        -moz-box-shadow: 1px 2px 57px -4px rgba(0,57,115,1);
+        box-shadow: 1px 2px 57px -4px rgba(0,57,115,1);
+      }
+      .card-img-top 
+      {        
+        width: 100%;
+        height: 210px;  
+      }
+        
+      .card-block
+      {
+        background-color: #115B87;
+        color:white;
+      }
+      .card-title
+      {
+        letter-spacing: 1px;
+      }
+      
+      .border
+      {
+        border:2px solid #115B87;
+        border-radius: 10px;
+        padding:20px 20px 0px 20px; 
+        margin-bottom: 10px;
+      }
+
+/*----------------------------------------------------Small Mobile Screens----------------------------------------------*/
+       @media (max-width:991px)
+       {
+        .navbar-nav .nav-item 
+        {
+          float: none !important;
+        }
+
+        #home-item
+        {
+          padding-top:60px;
+        }
+        
+         #footer
+        {
+          height: 350px;
+          font-size: 14px;
+        }
+        #logo1
+        {
+          margin-bottom: 32px;
+        }
+
+        #logo
+        {
+          width: 120px;
+          height: 70px;
+        }
+
+      }
+
+      </style>
+
+    </head>
+    
+    <body>
+
+      <nav class="navbar navbar-default center navbar-fixed-top " id="navbar">
+
+        <div class="navbar-header">
+          
+          <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">&#9776;</button>
+          <a class="navbar-brand" href="home.html"><img src="images/logo.jpg" class="img-responsive" id="logo"></a>
+        
+        </div>
+
+        <div class="collapse navbar-toggleable-md" id="exCollapsingNavbar2">
+
+          <a class="navbar-brand" href="#"></a>
+
+          <div class="navbar-inner ">
+
+            <ul class="nav navbar-nav nav-pills">
+
+              <li class=" nav-item" id="home-item">
+                <a class=" nav-link " href="index.html">HOME</a>
+              </li>
+
+              <li class=" nav-item">
+                <a class=" nav-link" href="events.html">EVENTS</a>
+              </li>
+
+              <li class=" nav-item">
+                <a class=" nav-link  " href="ground.html">GROUND</a>
+              </li>
+
+              <li class=" nav-item">
+                <a class=" nav-link" href="sports.html">SPORTS<br>ASSOCIATED</a>
+              </li>
+
+              <li class=" nav-item">
+                <a class=" nav-link" href="/blog/">BLOG</a>
+              </li>
+
+              <li class=" nav-item">
+                <a class=" nav-link active" href="coaches.html">OUR TEAM</a>
+              </li>
+
+              <li class=" nav-item">
+                <a class=" nav-link" href="contact.html">CONTACT</a>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+
+      <div class="container" id="aboutus">    
+
+        <div class="row border">
+          
+              <div class="col-md-3">
+
+                <div class="card-deck-wrapper">
+  
+                  <div class="card card-inverse1">
+            
+                      <img class="card-img-top " src="images/kbirje.jpg" alt="Card image cap">
+                
+                        <div class="card-block">
+                  
+                            <h4 class="card-title text-xs-center">Kaustubh Birje<br/></h4>
+                            <h6 class="card-title text-xs-center">Founder</h6>
+                
+                        </div>
+          
+                  </div>
+          
+                </div>
+        
+              </div>
+
+              <div class="col-md-8 ">
+
+
+                <div id="wrapper">
+
+                  <p >Kaustubh Birje was a student of Vidya Bhavan School, MIT Jr. College & Garware College of Commerce (BBA Dept.) & actively participated in various extracurricular activities of School & College. MES GARWARE BBA Team won football Trophy & Kaustubh was one of the Team Member. He was one of the leading student members at front end for the preparation of challenging NACC Accreditation process.</p>
+ 
+                  <p>He has been invited by M/S Kaveri Sports Club-PUNE at KARNATAKA SCHOOL - Kothrud for Part-time Football coaching to young students between ages 07 to 20 years. He has handled this activity with only 5students & now grown that club for more than 100 students.</p> 
+                   
+                  <p class="h5">He is a certified 'D' License Coach under ALL INDIA FOOTBALL FEDERATION.</p>
+                   
+                  <p>December 2014 he initiated his own Football Club (BETA Sports Club) at MIT School, Kothrud. The club started with 3 students. And now, the club is successfully training more than 40 students within a year. Later, in 2015 he started with another center in Bavdhan. Now the club trains more than 100 students. 
+                  </p>
+
+                </div>
+
+            </div>
+        
+        </div>
+
+  
+
+        <div class="row border">
+          
+              <div class="col-md-3">
+
+                <div class="card-deck-wrapper">
+  
+                  <div class="card card-inverse1">
+            
+                      <img class="card-img-top " src="images/sbirje.jpg" alt="Card image cap">
+                
+                        <div class="card-block">
+                  
+                            <h4 class="card-title text-xs-center">Sourabh Birje<br/></h4>
+                            <h6 class="card-title text-xs-center">Co-Founder</h6>
+                
+                        </div>
+          
+                  </div>
+          
+                </div>
+        
+              </div>
+
+              <div class="col-md-8">
+
+
+                <div id="wrapper">
+
+                  <p class="info">"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"</p>
+
+                </div>
+
+              </div>
+        
+        </div>
+
+
+        <div class="row border">
+          
+              <div class="col-md-3 ">
+
+                <div class="card-deck-wrapper">
+  
+                  <div class="card card-inverse1">
+            
+                      <img class="card-img-top " src="images/ameya.jpg" alt="Card image cap">
+                
+                        <div class="card-block">
+                  
+                            <h4 class="card-title text-xs-center">Ameya Argade<br/></h4>
+                            <h6 class="card-title text-xs-center">Football Coach</h6>
+                
+                        </div>
+          
+                  </div>
+          
+                </div>
+        
+              </div>
+
+              <div class="col-md-8">
+
+
+                <div id="wrapper">
+
+                  <p class="info" >Ameya has represented Parshuramians ‘C’’, ‘B’ and ‘A’ i.e. third, second and super division respectively of my city, Pune. (Poona District Football Association) He also represented Navi Mumbai FC, a club situated outside my city. He has represented India U-23 national team(FUTSAL) in the Asian cup 2014 held in Malaysia.</p>
+                  <p>Coaching qualifications -
+                  <br>
+                  <br>1.  All India Football Federation ‘D’ license
+
+                  <br>2.  Asian Football Confederation ‘C’ license
+
+                  <br>3.  The England FA international coaching award foundation level
+
+                  <br>He has also done a certification course in sports psychology from the Symbiosis College of Liberal Arts </p>
+
+                </div>
+
+              </div>
+        
+        </div>
+
+
+
+        <div class="row border">
+          
+              <div class="col-md-3">
+
+                <div class="card-deck-wrapper">
+  
+                  <div class="card card-inverse1">
+            
+                      <img class="card-img-top " src="images/basketball.jpg" alt="Card image cap">
+                
+                        <div class="card-block">
+                  
+                            <h4 class="card-title text-xs-center">Bhushan More<br/></h4>
+                            <h6 class="card-title text-xs-center">Basketball Coach</h6>
+                
+                        </div>
+          
+                  </div>
+          
+                </div>
+        
+              </div>
+
+              <div class="col-md-8">
+
+
+                <div id="wrapper">
+
+                  <p class="info">Bhushan he is a very sincere and enthusiastic Basketball player. 
+                  He has developed skills of coaching by attending NBA (India) coaching camp. 
+                  During his schooling and college he persuaded his career along with his sports activities</p>
+
+                  <p>Basketball Achievements
+                  <br>
+                  <br>• 2012 Certificate as Pune District Basketball Association (under 18 district Basketball Championship 2012).
+                  <br>• 2013 Certificate as Senior State level player, from Maharashtra State Basketball Association.
+                  <br>• 2014 Certificate as Pune District Basketball Association (2014 Certificate as Runner up from Pune District Basketball under 18 district Basketball Championship 2014).
+                  <br>• 2014 Certificate asWinter Slam Basketball Tournament as Runner up from Pune District Basketball under 19 district Basketball Championship 2014).</p>
+
+                </div>
+
+            </div>
+        
+        </div>
+
+
+      </div>
+
+
+      <div class="container-fluid " id="footer">
+
+        <div class="col-md-5">
+          
+          <p class="font-weight-bold"><span class="footerfont">Office Address:</span>
+          <br>10,Chitra Apartments,966/A
+          <br>Gokhale Nagar Road
+          <br>Near Vetal Maharaj Chowk,Shivajinagar
+          <br>Pune-411016</p>
+        
+        </div>
+
+  
+
+        <div id="logo1" class="col-md-5 ">  
+
+          <a href="https://www.facebook.com/betasportsclub/"> <i class="fa fa-facebook " aria-hidden="true" id="facebook"></i></a>
+
+          <a href="https://twitter.com/BetaFC_Pune"><i class="fa fa-twitter " aria-hidden="true" id="twitter"></i>  </a>
+
+          <a href="https://www.instagram.com/beta_sportsclub/"><i class="fa fa-instagram" aria-hidden="true"></i> </a>
+
+          <a href="https://plus.google.com/u/0/101752366025782950515/posts"> <i class="fa fa-google-plus" aria-hidden="true" id="google-plus"></i> </a>
+  
+        </div>
+
+        <div class="col-md-2">
+          
+            <p class="font-weight-bold"><span class="footerfont">Contact No:</span>
+            <br>8793089994
+            <br>9158823893</p>
+            
+        </div>
+
+
+      </div>
+
+
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript">
+      
+  </script>
+  
+
+
+  </body>
+
+</html>

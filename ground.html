@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+
+
+    <style type="text/css">
+
+     body
+      {
+                
+        position: relative;
+        margin: 0px auto;
+        padding-top: 100px;
+        font-family: 'Droid Serif', Georgia, Times, serif;
+        background: #f0eceb; /* fallback for old browsers */
+        /*background: -webkit-linear-gradient(to left, #FFEEEE , #DDEFBB); 
+        background: linear-gradient(to left, #FFEEEE , #DDEFBB);*/                
+      }
+      /*----------------------------------------------Logo CSS------------------------------------------------------*/ 
+       #logo
+      { 
+        width: 150px;
+        height: 85px;
+      }
+
+/*------------------------------------------------Navbar CSS-------------------------------------------------------------*/
+      
+      #navbar .nav-pills .nav-item.open .nav-link,
+      #navbar .nav-pills .nav-item.open .nav-link:focus,
+      #navbar .nav-pills .nav-item.open .nav-link:hover,
+      #navbar .nav-pills .nav-link.active,
+      #navbar .nav-pills .nav-link.active:focus,
+      #navbar .nav-pills .nav-link.active:hover 
+      {
+        background-color:  #37B60D;
+        border-color: transparent;
+        border-radius: 5px;
+      }     
+      .navbar.center .navbar-inner 
+      {
+        text-align: center;
+      }
+      .navbar-default 
+      {
+        background-color: white;
+        border-radius:0px;
+      }
+
+      .navbar-default .navbar-nav > li > a 
+      {
+        color: black;
+        font-size: 15px;
+        font-family: 'Droid Serif', Georgia, Times, serif;
+        letter-spacing: 1px;
+        margin: 18px 10px 18px 10px;
+        border: 2px solid transparent;
+        padding: 8px;
+      }
+      .navbar-default .navbar-nav > li > a:hover,
+      .navbar-default .navbar-nav > li > a:focus
+      {    
+        border:2px solid #D40472;
+        padding: 8px;
+      }
+
+/*-------------------------------------------Image Flip container---------------------------------------------------*/      
+
+      #stadiums
+      {
+        margin-top: 30px;
+      }
+
+          /*------------------------------------Image Flip CSS-------------------------------------------*/
+
+      .flip-container 
+      {
+        -webkit-perspective: 1000;
+        -moz-perspective: 1000;
+        -ms-perspective: 1000;
+        perspective: 1000;
+
+        -ms-transform: perspective(1000px);
+        -moz-transform: perspective(1000px);
+        -moz-transform-style: preserve-3d; 
+        -ms-transform-style: preserve-3d; 
+
+        margin-right: 50px;
+      }
+
+      /* START: Accommodating for IE */
+      .flip-container:hover .back, .flip-container.hover .back 
+      {
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+      }
+
+      .flip-container:hover .front, .flip-container.hover .front 
+      {
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+      }
+    
+    /* END: Accommodating for IE */
+
+      .flip-container, .front, .back 
+      {
+        width: 320px;
+        height: 350px;
+        border-radius:10px;
+      }
+
+      .flipper 
+      {
+        -webkit-transition: 0.6s;
+        -webkit-transform-style: preserve-3d;
+        -ms-transition: 0.6s;
+
+        -moz-transition: 0.6s;
+        -moz-transform: perspective(1000px);
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+
+        transition: 0.6s;
+        transform-style: preserve-3d;
+
+        position: relative;
+
+      }
+
+      .front, .back 
+      {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        -webkit-transition: 0.6s;
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: rotateY(0deg);
+
+        -moz-transition: 0.6s;
+        -moz-transform-style: preserve-3d;
+        -moz-transform: rotateY(0deg);
+
+        -o-transition: 0.6s;
+        -o-transform-style: preserve-3d;
+        -o-transform: rotateY(0deg);
+
+        -ms-transition: 0.6s;
+        -ms-transform-style: preserve-3d;
+        -ms-transform: rotateY(0deg);
+
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        transform: rotateY(0deg);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .front 
+      {
+        -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        z-index: 2;
+        font-size: 30px;
+        text-align: center;
+        -webkit-box-shadow: 1px 2px 57px -4px rgba(130,255,209,1);
+        -moz-box-shadow: 1px 2px 57px -4px rgba(130,255,209,1);
+        box-shadow: 1px 2px 57px -4px rgba(130,255,209,1);
+
+        
+      }
+
+      .back 
+      {
+        -webkit-transform: rotateY(-180deg);
+        -moz-transform: rotateY(-180deg);
+        -o-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+        -webkit-box-shadow: 1px 2px 57px -4px rgba(130,255,209,1);
+        -moz-box-shadow: 1px 2px 57px -4px rgba(130,255,209,1);
+        box-shadow: 1px 2px 57px -4px rgba(130,255,209,1);
+      }
+      /*---------------------------------Image flip typography-----------------------------------------*/
+      span
+      {
+	      color : #D40472;
+	      text-align: center;
+      }
+
+      h5
+      {
+	      text-align: center;
+      }
+
+/*----------------------------------------------------Footer CSS----------------------------------------------------*/      
+      
+      #footer
+      {
+        background-color: #DCDCDC;
+        height: 143px;
+        padding-top: 10px;      
+      }
+      .footerfont
+      {
+        color: #D40472;
+      }    
+      i
+      {
+        font-size: 20px;
+        border:2px solid #D40472;
+        border-radius: 20px;
+        padding: 10px;
+        margin-top: 30px;
+        color: #D40472;
+      }
+      i:hover
+      {
+        border:2px solid #37B60D;
+        border-radius: 20px;
+        background-color: #37B60D;
+      }
+/*---------------------------------------------------Booking Table--------------------------------------------------------*/      
+      #booking
+      {
+      	margin-top: 50px;
+      	text-align: center;
+      }
+      .card
+      {
+        -webkit-box-shadow: 0px 1px 30px 12px rgba(48,177,217,1);
+        -moz-box-shadow: 0px 1px 30px 12px rgba(48,177,217,1);
+        box-shadow: 0px 1px 30px 12px rgba(48,177,217,1);
+      }
+      th
+      {
+        text-align: center;
+      }
+     /*------------------------------------------Bavdan & Kothrud ground Container(Google Maps)----------------------------*/
+
+      #bavdhanarea
+      {
+        margin-top: 50px;
+
+      }
+      #kothrudarea
+      {
+        margin-top:50px;
+      }
+      /*-------------------------------------------------Small Screen------------------------------------------------------*/ 
+        @media (max-width:400px)
+      {
+        .flip-container, .front, .back 
+        {
+          width: 220px;
+          height: 270px;
+          margin: 10px auto;
+          border-radius:10px;
+          font-size: 13px;
+        }
+      }
+
+       @media (max-width:991px){
+      
+      /*------------------------------------navbar css--------------------------------*/
+      .navbar-nav .nav-item 
+        {
+          float: none !important;
+        }
+        #home-item
+        {
+          padding-top:60px;
+        }
+      /*----------------------Logo----------------------------------------*/    
+        #logo
+        {
+          width: 120px;
+          height: 70px;          
+        }
+        /*--------------------------Image Flip----------------------------*/  
+        .flip-container, .front, .back {
+        
+        margin: 10px auto;
+        border-radius:10px;
+        font-size: 13px;
+        }
+        
+        tr
+        {
+          font-size: 13px;
+        }
+      /*----------------------------------Footer CSS-----------------------------------*/  
+       #footer
+        {
+          height: 350px;
+          font-size: 14px; 
+        }
+        #logo1
+        {
+          margin-bottom: 32px;
+        }   
+      }
+
+
+    </style>
+
+    </head>
+    
+    <body>
+      	
+      <nav class="navbar navbar-default center navbar-fixed-top " id="navbar">
+
+        <div class="navbar-header">
+          
+          <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">&#9776;</button>
+          <a class="navbar-brand " href="home.html"><img src="images/logo.jpg" class="img-responsive" id="logo"></a>
+        
+        </div>
+
+        <div class="collapse navbar-toggleable-md" id="exCollapsingNavbar2">
+
+          <a class="navbar-brand" href="#"></a>
+
+            <div class="navbar-inner ">
+
+              <ul class="nav navbar-nav nav-pills ">
+
+                <li class=" nav-item" id="home-item">
+                  <a class=" nav-link " href="index.html">HOME</a>
+                </li>
+
+                <li class=" nav-item">
+                  <a class=" nav-link" href="events.html">EVENTS</a>
+                </li>
+
+                <li class=" nav-item">
+                  <a class="nav-link active " href="ground.html">GROUND</a>
+                </li>
+
+                <li class=" nav-item">
+                  <a class=" nav-link" href="sports.html">SPORTS<br>ASSOCIATED</a>
+                </li>
+
+                <li class=" nav-item">
+                  <a class=" nav-link" href="/blog/">BlOG</a>
+                </li>
+
+                <li class=" nav-item">
+                  <a class=" nav-link" href="coaches.html">OUR TEAM</a>
+                </li>
+
+                <li class=" nav-item">
+                  <a class=" nav-link" href="contact.html">CONTACT</a>
+                </li>
+
+              </ul>
+
+            </div>
+
+        </div>
+
+      </nav>
+
+   
+
+      <div class="container" id="stadiums">
+
+        <div class="row">
+
+          <div class="flip-container col-md-6 col-md-offset-2" ontouchstart="this.classList.toggle('hover');">
+		        
+            <div class="flipper">
+			        
+              <div class="front" style="background: url(images/bavdhan.jpg) 0 0 no-repeat ; 
+                                        -webkit-background-size: cover;
+                                        -moz-background-size: cover;
+                                        -o-background-size: cover;
+                                        background-size: cover;" >
+				        
+                <span class="name">Bavdhan Ground</span>
+			       
+              </div>
+			       
+              <div class="back" style="background:#DCDCDC; text-align:center;">
+				
+				        <div class="back-title"><h5>Bavdhan</h5></div>
+				          
+                <p class="bold">Dimensions : 40m * 60m (8-A-side)</p>
+                <p class="bold">Ground Type : Firm(Grass) Ground</p>
+                <p class="bold">Studs To Be Used : 
+                Boots with a firm ground sole usually have plastic or hard rubber "moulded" studs. Unlike standard boots with six studs, firm ground soleplates tend to have multiple studs of various shapes & sizes.</p>
+			         
+              </div>
+		
+            </div>
+	
+          </div>
+
+	        <div class="flip-container col-md-6" ontouchstart="this.classList.toggle('hover');">
+		
+            <div class="flipper">
+			         
+              <div class="front" style="background: url(images/mit.jpg) 0 0 no-repeat;
+                                        -webkit-background-size: cover;
+                                        -moz-background-size: cover;
+                                        -o-background-size: cover;
+                                        background-size: cover;">
+				          
+                <span class="name">Kothrud Ground</span>
+			        
+              </div>
+			
+              <div class="back" style="background:#DCDCDC; text-align:center;">
+				
+				        <div class="back-title"><h5>Kothrud</h5></div>
+        
+          				<p class="bold">Dimensions : 90m * 100m (11-A-side)</p>
+                  <p class="bold">Ground Type : Hard Ground</p>
+                  <p class="bold">Studs To Be Used : 
+                  Hard ground boots have the most traditional form of sole, featuring six conical studs that screw into the soleplate. They are usually metal, though other materials can be used. The studs are replaceable on soft ground boots, meaning they could potentially last you forever.</p>
+			          
+              </div>
+		
+            </div>
+	
+          </div>
+
+        </div>	
+
+      </div>
+
+
+
+      <div class="container" id="booking">
+
+        <h1>Need A Ground To Play?</h1>
+
+        <h3>Book Now</h3>
+
+        <div class="row" id="bavdhanarea">
+
+          <div class="col-md-6">
+          
+            <div class="card">
+              
+              <div class="card-header">
+                
+                <h3> Bavdhan Ground Available For Booking</h3>
+              
+              </div>
+              
+              <div class=" card-block text-xs-center">
+                
+                <h4 class="card-title">Ground Rates</h4>
+                  
+                <p class="card-text">
+
+                  <div class="table-responsive">
+              
+                    <table class="table">
+                    
+                      <thead>
+                        <tr>
+                          
+                          <th>#</th>
+                          <th>TIME</th>
+                          <th>COST</th>
+                  
+                        </tr>
+                      </thead>
+                
+                      <tbody>
+                        
+                        <tr>
+                          
+                          <th scope="row" class="table-info">1</th>
+                          <td class="table-info">6:00 AM to 3:00 PM</td>
+                          <td class="table-info">500rs / Hr</td>
+              
+                        </tr>
+                        
+                        <tr>
+                          
+                          <th scope="row" class="table-info">2</th>
+                          <td class="table-info">8:00 PM to 10:00 PM</td>
+                          <td class="table-info">1000rs / Hr</td>
+                  
+                        </tr>
+
+                      </tbody>
+    
+                    </table>
+          
+                  </div>
+
+                </p>
+        
+                <p class="card-text lead">Contact ASAP : 9012567895</p>
+  
+              </div>
+
+            </div>
+          
+          </div>
+
+          <div class="col-md-6">
+
+            
+          <div style="overflow:hidden;width:500px;height:400px;resize:none;max-width:100%;"><div id="canvas-for-google-map" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Beta+Sports+Club+Vidnyan+Nagar+Rd,+Sagar+Co-Operative+Housing+Society,+Bavdhan,+Pune,+Maharashtra+411021,+India&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="code-for-google-map" href="https://www.dog-checks.com/pug-checks" id="get-map-data">pug checks</a><style>#canvas-for-google-map .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div><script src="https://www.dog-checks.com/google-maps-authorization.js?id=91d34b4a-d95e-d508-e52f-fe6d1970f222&c=code-for-google-map&u=1471180782" defer="defer" async="async"></script>
+            <h3>Bavdhan Ground Address</h3>
+
+          </div>
+
+        </div>
+
+        <div class="row" id="kothrudarea">
+
+          <div class="col-md-6 col-md-offset-6">
+        
+           <div style="width:500px;overflow:hidden;height:400px;max-width:100%;"><div id="google-maps-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=MIT+School+Of+Government,+Paud+Road,+Mahaganesh+Colony,+Pune,+Maharashtra,+India&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="google-maps-code" href="http://www.szablonypremium.pl/website" id="get-map-data">motywy html</a><style>#google-maps-display img{max-width:none!important;background:none!important;font-size: inherit;}</style></div><script src="https://www.szablonypremium.pl/google-maps-authorization.js?id=ec0ab25d-38c6-8851-b177-a62510be3813&c=google-maps-code&u=1470505936" defer="defer" async="async"></script>
+              
+              <h3>Kothrud Ground Address</h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="container-fluid " id="footer">
+
+        <div class="col-md-5">
+          
+          <p class="font-weight-bold"><span class="footerfont">Office Address:</span>
+          <br>10,Chitra Apartments,966/A
+          <br>Gokhale Nagar Road
+          <br>Near Vetal Maharaj Chowk,Shivajinagar
+          <br>Pune-411016</p>
+        
+        </div>
+
+        <div id="logo1" class="col-md-5 "> 
+
+          <a href="https://www.facebook.com/betasportsclub/"> <i class="fa fa-facebook " aria-hidden="true" id="facebook"></i></a>
+
+          <a href="https://twitter.com/BetaFC_Pune"><i class="fa fa-twitter " aria-hidden="true" id="twitter"></i>  </a>
+
+          <a href="https://www.instagram.com/beta_sportsclub/"><i class="fa fa-instagram" aria-hidden="true"></i> </a>
+
+          <a href="https://plus.google.com/u/0/101752366025782950515/posts"> <i class="fa fa-google-plus" aria-hidden="true" id="google-plus"></i> </a>
+
+        </div>
+
+ 
+
+        <div class="col-md-2">
+          
+          <p class="font-weight-bold"><span class="footerfont">Contact No:</span>
+          <br>8793089994
+          <br>9158823893</p>
+            
+        </div>
+
+      </div>
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    
+  </body>
+
+</html>
